@@ -111,3 +111,13 @@ ORDER BY CAST(price_meta.meta_value AS DECIMAL(10, 6)) ASC
 LIMIT 1;
 ```
 
+
+
+## Question 5 : Réduction du nombre de requêtes SQL pour `getMetas`
+
+|                              | **Avant** | **Après** |
+|------------------------------|-----------|-----------|
+| Nombre d'appels de `getDB()` | 2201      | 601       |
+| Temps de `getMetas`          | 1.59s     | 1.3s      |
+
+
