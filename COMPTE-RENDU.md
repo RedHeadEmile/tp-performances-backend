@@ -7,3 +7,15 @@
 - `getCheapestRoom` 15.51s
 - `convertEntityFromArray` 28.39s
 - `list` 28.39s
+
+
+
+## Question 3 : Réduction du nombre de connexions PDO
+
+**Temps de chargement de la page** : 27.1 secondes
+
+**Temps consommé par `getDB()`**
+
+- **Avant** 1.23s
+
+- **Après** 2ms

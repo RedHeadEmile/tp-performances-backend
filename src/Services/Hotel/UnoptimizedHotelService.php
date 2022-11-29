@@ -7,6 +7,7 @@ use App\Common\SingletonTrait;
 use App\Common\Timers;
 use App\Entities\HotelEntity;
 use App\Entities\RoomEntity;
+use App\Services\DBService;
 use App\Services\Room\RoomService;
 use Cassandra\Time;
 use Exception;
@@ -32,7 +33,9 @@ class UnoptimizedHotelService extends AbstractHotelService {
    * @noinspection PhpUnnecessaryLocalVariableInspection
    */
   protected function getDB () : PDO {
-    $pdo = new PDO( "mysql:host=db;dbname=tp;charset=utf8mb4", "root", "root" );
+    $timerId = Timers::getInstance()->startTimer('pdo');
+    $pdo = DBService::getPDO();
+    Timers::getInstance()->endTimer('pdo', $timerId);
     return $pdo;
   }
   
