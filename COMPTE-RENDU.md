@@ -197,3 +197,28 @@ WHERE
 
 GROUP BY hotel.ID;
 ```
+
+## Question 7 : ajout d'indexes SQL
+
+**Indexes ajoutés**
+
+- `TABLE` : `COLONNES`
+- `TABLE` : `COLONNES`
+- `TABLE` : `COLONNES`
+
+**Requête SQL d'ajout des indexes**
+
+```sql
+ALTER TABLE `wp_postmeta` ADD INDEX(`post_id`);
+ALTER TABLE `wp_usermeta` ADD INDEX(`user_id`);
+ALTER TABLE `wp_posts` ADD INDEX(`post_author`);
+```
+
+| Temps de chargement de la page | Sans filtre | Avec filtres |
+|--------------------------------|-------------|--------------|
+| `UnoptimizedService`           | 1.7s        | 0.95s        |
+| `OneRequestService`            | 1.37s       | 0.5s         |
+[Filtres à utiliser pour mesurer le temps de chargement](http://localhost/?types%5B%5D=Maison&types%5B%5D=Appartement&price%5Bmin%5D=200&price%5Bmax%5D=230&surface%5Bmin%5D=130&surface%5Bmax%5D=150&rooms=5&bathRooms=5&lat=46.988708&lng=3.160778&search=Nevers&distance=30)
+
+
+
