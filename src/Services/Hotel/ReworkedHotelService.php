@@ -3,9 +3,33 @@
 namespace App\Services\Hotel;
 
 use App\Common\Timers;
+use App\Entities\HotelEntity;
+use App\Entities\RoomEntity;
+use App\Services\APIReviewsService;
 
 class ReworkedHotelService extends OneRequestHotelService
 {
+    private readonly APIReviewsService $reviewService;
+    protected function __construct()
+    {
+        parent::__construct();
+        $this->reviewService = new APIReviewsService('http://cheap-trusted-reviews.fake/');
+    }
+
+    protected function convertEntityFromArray(array $args): ?HotelEntity
+    {
+        $timeId = Timers::getInstance()->startTimer('convertEntityFromArray');
+
+        $reviews = $this->reviewService->get($args['hotel_id']);
+
+        $hotel = parent::convertEntityFromArray($args)
+            ->setRatingCount($reviews['data']['count'])
+            ->setRating(round($reviews['data']['rating']));
+
+        Timers::getInstance()->endTimer('convertEntityFromArray', $timeId);
+        return $hotel;
+    }
+
     protected function buildQuery(array $args): \PDOStatement
     {
         $bathroomsPredicate  = (($args['bathRooms'] ?? null)      !== null) ? ' AND rooms.bathrooms >= :min_bathrooms' : '';

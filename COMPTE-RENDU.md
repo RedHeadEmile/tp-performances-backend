@@ -364,3 +364,13 @@ INSERT INTO reviews(
 
 
 
+
+
+## Question 9 : Utilisation d'une API pour les reviews
+
+**Temps de chargement de la page**
+
+| Temps de chargement de la page | Sans filtre | Avec filtres |
+|--------------------------------|-------------|--------------|
+| `Avant API`                    | 0.41s       | 0.18s        |
+| `Après ajout API`              | 14.8s       | 0.25s        |
