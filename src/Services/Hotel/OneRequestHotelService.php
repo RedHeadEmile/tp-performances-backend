@@ -190,8 +190,8 @@ FROM wp_users as hotel
         if (($args['price']['max'] ?? null)   !== null) $sqlArgs['price_max']      = $args['price']['max'];
         if (($args['surface']['min'] ?? null) !== null) $sqlArgs['surface_min']    = $args['surface']['min'];
         if (($args['surface']['max'] ?? null) !== null) $sqlArgs['surface_max']    = $args['surface']['max'];
-        if (($args['bedrooms'] ?? null)       !== null) $sqlArgs['min_bedrooms']   = $args['bedrooms'];
-        if (($args['bathrooms'] ?? null)      !== null) $sqlArgs['min_bathrooms']  = $args['bathrooms'];
+        if (($args['rooms'] ?? null)          !== null) $sqlArgs['min_bedrooms']   = $args['rooms'];
+        if (($args['bathRooms'] ?? null)      !== null) $sqlArgs['min_bathrooms']  = $args['bathRooms'];
 
         foreach ($args['types'] as $k => $v)
             $sqlArgs['type' . $k] = $v;

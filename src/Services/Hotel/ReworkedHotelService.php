@@ -8,8 +8,8 @@ class ReworkedHotelService extends OneRequestHotelService
 {
     protected function buildQuery(array $args): \PDOStatement
     {
-        $bathroomsPredicate  = (($args['bathrooms'] ?? null)      !== null) ? ' AND rooms.bathrooms >= :min_bathrooms' : '';
-        $bedroomsPredicate   = (($args['bedrooms'] ?? null)         !== null) ? ' AND rooms.bedrooms >= :min_bedrooms' : '';
+        $bathroomsPredicate  = (($args['bathRooms'] ?? null)      !== null) ? ' AND rooms.bathrooms >= :min_bathrooms' : '';
+        $bedroomsPredicate   = (($args['rooms'] ?? null)         !== null) ? ' AND rooms.bedrooms >= :min_bedrooms' : '';
 
         $minPricePredicate   = (($args['price']['min'] ?? null)   !== null) ? ' AND rooms.price >= :price_min' : '';
         $maxPricePredicate   = (($args['price']['max'] ?? null)   !== null) ? ' AND rooms.price < :price_max' : '';
