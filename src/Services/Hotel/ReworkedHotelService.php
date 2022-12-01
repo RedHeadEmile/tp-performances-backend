@@ -50,7 +50,7 @@ SELECT
     hotels.image_url       as hotel_coverImage,
     hotels.phone           as hotel_phone,
     
-    COUNT(reviews.id)      as review_total,
+    COUNT(DISTINCT reviews.id)      as review_total,
     AVG(reviews.review)    as review_avg,
 
     rooms.id               as cheapest_roomid,
