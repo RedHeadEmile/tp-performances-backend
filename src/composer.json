@@ -1,7 +1,8 @@
 {
     "name": "but-info-nevers/tp-performances-backend",
     "require": {
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "symfony/cache": "^6.2"
     },
     "autoload": {
         "files": [
