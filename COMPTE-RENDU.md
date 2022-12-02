@@ -384,3 +384,12 @@ INSERT INTO reviews(
 |------------|------------|
 | 18.5sec    | 1sec       |
 [URL pour ignorer le cache sur localhost](http://localhost?skip_cache)
+
+## Question 14 : Compression GZIP
+
+**Comparaison des poids de fichier avec et sans compression GZIP**
+
+|                       | Sans  | Avec   |
+|-----------------------|-------|--------|
+| Total des fichiers JS | 1.1MB | 248kB  |
+| `lodash.js`           | 562kB | 98.5kB |
