@@ -4,8 +4,8 @@ namespace App\Services\Hotel;
 
 use App\Common\Timers;
 use App\Entities\HotelEntity;
-use App\Entities\RoomEntity;
-use App\Services\APIReviewsService;
+use App\Services\Review\APIReviewsService;
+use App\Services\Review\CachedApiReviewsService;
 
 class ReworkedHotelService extends OneRequestHotelService
 {
@@ -13,7 +13,7 @@ class ReworkedHotelService extends OneRequestHotelService
     protected function __construct()
     {
         parent::__construct();
-        $this->reviewService = new APIReviewsService('http://cheap-trusted-reviews.fake/');
+        $this->reviewService = new CachedApiReviewsService('http://cheap-trusted-reviews.fake/');
     }
 
     protected function convertEntityFromArray(array $args): ?HotelEntity
