@@ -393,3 +393,10 @@ INSERT INTO reviews(
 |-----------------------|-------|--------|
 | Total des fichiers JS | 1.1MB | 248kB  |
 | `lodash.js`           | 562kB | 98.5kB |
+
+## Question 15 : Cache HTTP fichiers statiques
+
+**Poids transféré de la page**
+
+- **Avant** : 73.5kB
+- **Après** : 14.8kB
