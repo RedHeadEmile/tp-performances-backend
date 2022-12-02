@@ -400,3 +400,18 @@ INSERT INTO reviews(
 
 - **Avant** : 73.5kB
 - **Après** : 14.8kB
+
+## Question 17 : Cache NGINX
+
+**Temps de chargement cache FastCGI**
+
+- **Avant** : 1.1s
+- **Après** : 0.8s
+
+#### Que se passe-t-il si on actualise la page après avoir coupé la base de données ?
+
+La page continue de pouvoir être chargée
+
+#### Pourquoi ?
+
+La page est stockée en cache.

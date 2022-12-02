@@ -5,7 +5,8 @@ ENV TZ="Europe/Paris"
 # Install NGINX
 RUN apt update && apt upgrade \
   && apt install -y tzdata \
-  && apt install -y nginx;
+  && apt install -y nginx \
+  && apt install -y libnginx-mod-http-cache-purge;
 
 # Install PHP
 RUN apt update \
