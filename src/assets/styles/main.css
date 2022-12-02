@@ -8,3 +8,9 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.btn {
+  text-transform: uppercase;
+  font-size: 0.85em !important;
+  font-weight: bold;
+}

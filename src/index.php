@@ -3,6 +3,7 @@
 namespace App;
 
 const __PROJECT_ROOT__  = __DIR__;
+define('VERSION', '1.1');
 
 use App\Controllers\Hotel\HotelListController;
 use App\Services\Hotel\OneRequestHotelService;
