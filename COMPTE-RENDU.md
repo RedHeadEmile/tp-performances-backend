@@ -365,7 +365,6 @@ INSERT INTO reviews(
 
 
 
-
 ## Question 9 : Utilisation d'une API pour les reviews
 
 **Temps de chargement de la page**
@@ -374,3 +373,14 @@ INSERT INTO reviews(
 |--------------------------------|-------------|--------------|
 | `Avant API`                    | 0.41s       | 0.18s        |
 | `Après ajout API`              | 14.8s       | 0.25s        |
+
+
+
+## Question 13 : Implémentation d'un cache Redis
+
+**Temps de chargement de la page**
+
+| Sans Cache | Avec Cache |
+|------------|------------|
+| 18.5sec    | 1sec       |
+[URL pour ignorer le cache sur localhost](http://localhost?skip_cache)
